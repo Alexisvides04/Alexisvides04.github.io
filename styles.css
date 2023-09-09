@@ -7,7 +7,6 @@
   --text-light: #a3a3a3;
   --extra-light: #f5f5f5;
   --white: #ffffff;
-  --max-width: 1200px;
 }
 
 * {
@@ -19,11 +18,12 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   background: #eee;
-  width: 100%;
+  overflow-x: hidden;
 
 }
 .header{
@@ -99,10 +99,11 @@ body {
 @media(max-width: 1000px){
   .header{
     padding: 0 1em;
+
   }
   .navbar{
     position: absolute;
-    left: -300px;
+    left: -280px;
     top: 0;
     z-index: 10;
     width: 280px;
@@ -297,6 +298,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   margin: 5em 0 0;
+
 }
 
 .connect__container {
@@ -344,6 +346,7 @@ body {
   color: var(--text-dark);
   background-color: var(--extra-light);
 }
+
 
 /*Fin Connect*/
 
@@ -411,7 +414,7 @@ body {
 @media(max-width: 1200px){
   .nosotros__content{
    flex-wrap: wrap;
-   width: 100%;
+   min-width: fit-content;
    padding: 0 1em;
   }
   
@@ -440,6 +443,68 @@ body {
 
 /* fin Nosotros*/
 
+/* Inicio comment*/
+.comment{
+  width: 100%;
+  padding:3em 1em;
+}
+.comment h3{
+  text-align: center;
+  font-size: 2em;
+}
+.comment__cards{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 2em 0.5em;
+  margin: 1em 0;
+  border-radius: 1em;
+}
+.comment__cards img{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.comment__cards span i{
+  color: #e5e506;
+}
+
+.comment__cards span strong{
+  margin-left: 1em;
+}
+
+@media  (width >  600px) {
+  .comment{
+    padding:5em 0 0 0;
+  }
+  .comment h3{
+    font-size: 3em;
+  }
+  .comment__content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    margin-top: 2em;
+  }
+  .comment__cards{
+    width:45%;
+  }
+}
+@media (width > 1230px) {
+  .comment__cards{
+    width: 23%;
+  }
+}
+/* fin comment*/
+
+
+/* Inicio contact*/
+
 section {
   display: flex;
   align-items: center;
@@ -452,7 +517,6 @@ section {
   margin: 60px 0 90px;
   display: flex;
   max-width: 1200px;
-  width: 100%;
   justify-content: space-between;
 }
 
@@ -523,10 +587,10 @@ section {
 
 /* query general*/
 @media screen and (max-width: 860px) {
-
-  body{
-    width: 100%;
+  section{
+    min-width: fit-content;
   }
+  
   section > p {
     text-align: center;
   }
@@ -556,6 +620,7 @@ section {
   .contact .row .col:last-child {
     margin-top: 40px;
   }
+ 
   .footer__content{
    padding: 0;
    width: 100%;
@@ -569,7 +634,3 @@ section {
     font-size: 3rem;
   }
 }
-
-
-
-
